@@ -13,7 +13,8 @@ const cache = {
 };
 module.exports = {
     entry: {
-        vendor: ["packages"]
+        'vendor': ["packages"],
+        'smile-examples': './docs/src/examples.js'
     },
     output: {
         path: path.join(__dirname, "../docs/dist"),
@@ -31,16 +32,17 @@ module.exports = {
             components: path.join(__dirname, "../docs/src/components")
         }
     },
-    // devServer: {
-    //     host: "0.0.0.0",
-    //     historyApiFallback: {
-    //         rewrites: [
-    //             { from: /^\/zanui\/vant\/examples/, to: "/examples.html" },
-    //             { from: /^\/zanui\/vant/, to: "/index.html" }
-    //         ]
-    //     },
-    //     stats: "errors-only"
-    // },
+    devServer: {
+        host: "0.0.0.0",
+        historyApiFallback: {
+            rewrites: [
+                { from: /^\/zanui\/vant/, to: "/index.html" },
+                { from: /^\/smile\/examples/, to: "/example.html" },
+            ]
+        },
+        port: 8999,
+        stats: "errors-only"
+    },
     module: {
         loaders: [
             {
@@ -81,7 +83,13 @@ module.exports = {
     plugins: [
         new ProgressBarPlugin(),
         new HtmlWebpackPlugin({
-            chunks: ["vendor"],
+            chunks: ["vendor", "smile-examples"],
+            template: "index.html",
+            filename: "example.html",
+            inject: true
+        }),
+        new HtmlWebpackPlugin({
+            chunks: ["vendor", "smile-examples"],
             template: "index.html",
             filename: "index.html",
             inject: true
