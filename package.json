@@ -6,7 +6,7 @@
   "author": "grove_Li",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --inline --config build/webpack.config.dev.js --content-base ./"
+    "dev": "webpack-dev-server --inline --hot --config build/webpack.config.dev.js --content-base ./"
   },
   "dependencies": {
     "autoprefixer": "^7.2.5",
