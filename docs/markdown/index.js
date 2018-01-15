@@ -10,5 +10,5 @@ function wrapper(component) {
     }
 }
 export default {
-    'demo': wrapper(r => require.ensure([], () => r(require('./test.md')), 'demo')),
+    'demo': wrapper(r => require.ensure([], () => r(require('./demo.md')), 'demo')),
 }

@@ -2,11 +2,13 @@ import Vue from "vue";
 import docConfig from "./doc.config";
 import componentDocs from "../markdown";
 import DemoPage from './components/demo.vue';
+import componentDemos from '../demos';
+console.log(componentDemos);
 const registerRoute = isExample => {
     const route = [
         {
             path: "*",
-            redirect: to => `/TODO`
+            redirect: to => `/demo`
         }
     ];
     const navs = docConfig["nav"] || [];
@@ -20,8 +22,8 @@ const registerRoute = isExample => {
         } else {
             addRoute(nav);
         }
-        return route;
     });
+    return route;
     function addRoute(page) {
         const { path } = page;
         if (path) {
