@@ -3,6 +3,8 @@ import VueRouter from 'vue-router';
 import App from './wapApp';
 import routes from './router.config';
 
+import 'packages/smile-css/src/index.css';
+
 Vue.use(VueRouter);
 const routesConfig = routes(true);
 console.log(routesConfig);
