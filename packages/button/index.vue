@@ -15,7 +15,17 @@
             's-button--bottom-action': bottomAction
         }
     ]"
-  ></component>
+  >
+    <loading
+        v-if="loading"
+        class="s-button__icon-loading"
+        type="circle"
+        :color="type === 'default' ? 'black' : 'white'"
+    />
+    <span class="s-button__text">
+        <slot />
+    </span>
+  </component>
 </template>
 <script>
 import {create} from '../utils';

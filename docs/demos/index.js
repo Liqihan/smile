@@ -16,4 +16,5 @@ function componentWrapper(component, name) {
 }
 export default {
     'demo': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/demo'), 'demo')), 'demo')),
+    'button': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/button'), 'button')), 'button'))
 }

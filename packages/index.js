@@ -1,4 +1,7 @@
-const components = [];
+import Buttom from './button'
+const components = [
+    Buttom
+];
 const install = Vue => {
     components.forEach(component => {
         Vue.use(component);
