@@ -1,0 +1,13 @@
+@import './common/var.css';
+.s-col {
+    float: left;
+    box-sizing: border-box;
+}
+@for $i from 1 to 24 {
+    .s-col-$i {
+        width: calc($i * 100% / 24);
+    }
+    .s-col-offset-$i {
+        margin-left: calc($i * 100% / 24);
+    }
+}

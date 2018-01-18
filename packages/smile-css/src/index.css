@@ -3,3 +3,5 @@
 
 /* common components */
 @import './button.css';
+@import './col.css';
+@import './row.css';

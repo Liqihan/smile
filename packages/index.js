@@ -1,9 +1,15 @@
-import Buttom from './button'
+import Button from './button';
+import Row from './row';
+import Col from './col';
+
 const components = [
-    Buttom
+    Button,
+    Row,
+    Col
 ];
 const install = Vue => {
     components.forEach(component => {
+        console.log(component);
         Vue.use(component);
     });
 };
@@ -12,6 +18,9 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 export {
+    Button,
+    Row,
+    Col,
     install,
     version
 }
