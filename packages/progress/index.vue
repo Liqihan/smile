@@ -5,8 +5,8 @@
     </div>
 </template>
 <script>
-import {create} '../utils'; 
-export default {
+import {create} from '../utils'; 
+export default create({
     name: "s-progress",
     props: {
         inactive: Boolean,
@@ -35,11 +35,14 @@ export default {
         }
     },
     computed: {
+        bgColor () {
+            return this.inactive ? '#cacaca' : this.color;
+        },
         pivotStyle () {
             const {percentage} = this;
             return {
                 color: this.textColor,
-                backgroundColor: this.inactive ? '#cacaca' : this.color,
+                backgroundColor: this.bgColor,
                 left: percentage <= 5 ? '0%' : percentage >= 95 ? '100%' : percentage + '%',
                 marginLeft: percentage <= 5 ? '0' : percentage >= 95 ? '-28px' : '-14px'
             }
@@ -47,11 +50,11 @@ export default {
         portionStyle() {
             return {
                 width: this.percentage + '%',
-                backgroundColor: this.inactive ? '#cacaca' : this.color
+                backgroundColor: this.bgColor 
             };
         }
     }
-}
+})
 </script>
 <style lang="css">
 </style>

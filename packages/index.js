@@ -1,11 +1,13 @@
 import Button from './button';
 import Row from './row';
 import Col from './col';
+import Progress from './progress';
 
 const components = [
     Button,
     Row,
-    Col
+    Col,
+    Progress
 ];
 const install = Vue => {
     components.forEach(component => {
@@ -21,6 +23,7 @@ export {
     Button,
     Row,
     Col,
+    Progress,
     install,
     version
 }
