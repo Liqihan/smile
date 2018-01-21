@@ -18,5 +18,6 @@ export default {
     'demo': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/demo'), 'demo')), 'demo')),
     'button': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/button'), 'button')), 'button')),
     'layout': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/layout'), 'layout')), 'layout')),
-    'progress': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/progress'), 'progress')), 'progress'))
+    'progress': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/progress'), 'progress')), 'progress')),
+    'tab': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/tab'), 'tab')), 'tab'))
 }

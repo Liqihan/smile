@@ -7,7 +7,7 @@
 </template>
 <script>
 import { create } from "../utils";
-import findParent from "../mixins/find-parent.";
+import findParent from "../mixins/find-parent";
 export default {
     name: "s-tab",
     mixins: [findParent],
@@ -32,5 +32,3 @@ export default {
     }
 };
 </script>
-<style lang="css">
-</style>

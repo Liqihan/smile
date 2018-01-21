@@ -84,9 +84,9 @@ export default create({
             if (this.position === 'page-top' || this.position === 'content-bottom') {
                 scrollUtils.setScrollTop(this.scrollEl, scrollUtils.getElementTop(this.$el));
             }
-        }
+        },
         sticky(isSticky) {
-            this.scrollHandle(isSticky)；
+            this.scrollHandle(isSticky);
         }
     },
     mounted() {
@@ -172,7 +172,7 @@ export default create({
             this.scrollTo(
                 nav,
                 scrollLeft,
-                offsetLeft - (navWidth = tabWidth) / 2
+                offsetLeft - (navWidth - tabWidth) / 2
             );
         },
         scrollTo(el, from, to) {

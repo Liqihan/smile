@@ -2,12 +2,16 @@ import Button from './button';
 import Row from './row';
 import Col from './col';
 import Progress from './progress';
+import Tabs from './tabs';
+import Tab from './tab';
 
 const components = [
     Button,
     Row,
     Col,
-    Progress
+    Progress,
+    Tabs,
+    Tab
 ];
 const install = Vue => {
     components.forEach(component => {
@@ -24,6 +28,8 @@ export {
     Row,
     Col,
     Progress,
+    Tabs,
+    Tab,
     install,
     version
 }
