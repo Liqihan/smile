@@ -8,7 +8,7 @@
 <script>
 import { create } from "../utils";
 import findParent from "../mixins/find-parent";
-export default {
+export default create({
     name: "s-tab",
     mixins: [findParent],
     props: {
@@ -30,5 +30,5 @@ export default {
     destroyed() {
         this.parentGroup.tabs.splice(this.index, 1);
     }
-};
+});
 </script>
