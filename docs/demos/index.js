@@ -20,5 +20,6 @@ export default {
     'layout': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/layout'), 'layout')), 'layout')),
     'progress': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/progress'), 'progress')), 'progress')),
     'tab': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/tab'), 'tab')), 'tab')),
-    'icon': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/icon'), 'icon')), 'icon'))
+    'icon': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/icon'), 'icon')), 'icon')),
+    'toast': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/toast'), 'toast')), 'toast'))
 }

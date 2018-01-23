@@ -5,6 +5,7 @@ import Progress from './progress';
 import Tabs from './tabs';
 import Tab from './tab';
 import Icon from './icon';
+import Toast from './toast';
 const components = [
     Button,
     Row,
@@ -12,7 +13,8 @@ const components = [
     Progress,
     Tabs,
     Tab,
-    Icon
+    Icon,
+    Toast
 ];
 const install = Vue => {
     components.forEach(component => {
@@ -32,6 +34,7 @@ export {
     Tabs,
     Tab,
     Icon,
+    Toast,
     install,
     version
 }
