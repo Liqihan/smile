@@ -107,7 +107,7 @@ export default create({
     },
     methods: {
         // sticky相关操作
-        scrollHandle(init) {
+        scrollHandler(init) {
             this.scrollEl =
                 this.scrollEl || scrollUtils.getScrollEventTarget(this.$el);
             (init ? on : off)(this.scrollEl, "scroll", this.onScroll, true);
