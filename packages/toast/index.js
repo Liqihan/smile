@@ -1,71 +1,79 @@
-import Vue from "vue";
-import VueToast from "./toast";
+import Vue from 'vue';
+import VueToast from './toast';
+
 let instance;
+
 const defaultOptions = {
-    type: "text",
-    mask: false,
-    visible: true,
-    duration: 3000,
-    position: "middle",
-    forbidClick: false,
-    clear: () => {
-        instance.visible = false;
-    }
+  type: 'text',
+  mask: false,
+  visible: true,
+  duration: 3000,
+  position: 'middle',
+  forbidClick: false,
+  clear: () => {
+    instance.visible = false;
+  }
 };
+
 let currentDefaultOptions = {
-    ...defaultOptions
+  ...defaultOptions
 };
+
 const createInstance = () => {
-    if (!instance) {
-        const ToastConstructor = Vue.extend(VueToast);
-        instance = new ToastConstructor({
-            el: document.createElement("div")
-        });
-        document.body.appendChild(instance.$el);
-    }
-};
-const Toast = (options = {}) => {
-    createInstance();
-
-    options = typeof options === "object" ? options : { message: options };
-    options = { ...currentDefaultOptions, ...options };
-    Object.assign(instance, options);
-
-    clearTimeout(instance.timer);
-
-    if (options.duration !== 0) {
-        instance.timer = setTimeout(() => {
-            instance.clear();
-        }, options.duration);
-    }
-
-    return instance;
-};
-const createMethod = type => (options = {}) =>
-    Toast({
-        type,
-        message: typeof options === "object" ? options.message : options,
-        ...options
+  if (!instance) {
+    const ToastConstructor = Vue.extend(VueToast);
+    instance = new ToastConstructor({
+      el: document.createElement('div')
     });
-Toast.loading = createMethod("loading");
-Toast.success = createMethod("success");
-Toast.fail = createMethod("fail");
+    document.body.appendChild(instance.$el);
+  }
+};
+
+const Toast = (options = {}) => {
+  createInstance();
+
+  options = typeof options === 'object' ? options : { message: options };
+  options = { ...currentDefaultOptions, ...options };
+  Object.assign(instance, options);
+
+  clearTimeout(instance.timer);
+
+  if (options.duration !== 0) {
+    instance.timer = setTimeout(() => {
+      instance.clear();
+    }, options.duration);
+  }
+
+  return instance;
+};
+
+const createMethod = type => (options = {}) => Toast({
+  type,
+  message: typeof options === 'object' ? options.message : options,
+  ...options
+});
+
+Toast.loading = createMethod('loading');
+Toast.success = createMethod('success');
+Toast.fail = createMethod('fail');
+
 Toast.clear = () => {
-    instance && instance.clear();
+  instance && instance.clear();
 };
 
 Toast.setDefaultOptions = (options = {}) => {
-    currentDefaultOptions = {
-        ...currentDefaultOptions,
-        ...options
-    };
+  currentDefaultOptions = {
+    ...currentDefaultOptions,
+    ...options
+  };
 };
 
 Toast.resetDefaultOptions = () => {
-    currentDefaultOptions = {
-        ...defaultOptions
-    };
+  currentDefaultOptions = {
+    ...defaultOptions
+  };
 };
+
 Vue.prototype.$toast = Toast;
 
 export default Toast;

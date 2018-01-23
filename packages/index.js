@@ -13,8 +13,7 @@ const components = [
     Progress,
     Tabs,
     Tab,
-    Icon,
-    Toast
+    Icon
 ];
 const install = Vue => {
     components.forEach(component => {
