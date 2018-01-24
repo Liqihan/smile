@@ -1,0 +1,172 @@
+@import './common/var.css';
+@import './mixins/ellipsis.css';
+
+.s-steps {
+  overflow: hidden;
+  background-color: $white;
+
+  &--horizontal {
+    padding: 0 10px;
+
+    .s-steps__items {
+      display: flex;
+      margin: 0 0 10px;
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 22px;
+
+      &.s-steps__items--alone {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  &--vertical {
+    padding: 0 0 0 35px;
+  }
+}
+
+.s-step {
+  flex: 1;
+  font-size: 14px;
+  position: relative;
+  color: $gray-dark;
+  
+  &--horizontal {
+    float: left;
+
+    &:first-child {
+      .s-step__title {
+        transform: none;
+        margin-left: 0;
+      }
+    }
+
+    &:last-child {
+      position: absolute;
+      right: 10px;
+      width: auto;
+
+      .s-step__title {
+        transform: none;
+        margin-left: 0;
+      }
+
+      .s-step__circle-container {
+        left: auto;
+        right: -9px;
+      }
+
+      .s-step__line {
+        width: 0;
+      }
+    }
+
+    .s-step__circle-container {
+      position: absolute;
+      top: 28px;
+      left: -8px;
+      padding: 0 8px;
+      background-color: $white;
+      z-index: 1;
+    }
+
+    .s-step__title {
+      font-size: 12px;
+      transform: translate3d(-50%, 0, 0);
+      display: inline-block;
+      margin-left: 3px;
+    }
+
+    .s-step__line {
+      position: absolute;
+      left: 0px;
+      top: 30px;
+      width: 100%;
+      height: 1px;
+      background-color: $gray-light;
+    }
+
+    &.s-step--finish {
+      color: $text-color;
+
+      .s-step__circle,
+      .s-step__line {
+        background-color: $green;
+      }
+    }
+
+    &.s-step--process {
+      color: $text-color;
+
+      .s-step__circle-container {
+        top: 24px;
+      }
+
+      .s-icon {
+        font-size: 12px;
+        color: $green;
+        display: block;
+      }
+    }
+  }
+
+  .s-step__circle {
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: #888;
+    border-radius: 50%;
+  }
+
+  &--vertical {
+    float: none;
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 10px 10px 10px 0;
+
+    &:not(:last-child)::after {
+      border-bottom-width: 1px;
+    }
+
+    &:first-child {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        background-color: $white;
+        top: 0;
+        left: -15px;
+        z-index: 1;
+      }
+    }
+
+    .s-step__circle-container > i {
+      position: absolute;
+      z-index: 2;
+    }
+
+    .s-icon-checked {
+      top: 12px;
+      left: -20px;
+      line-height: 1;
+      font-size: 12px;
+    }
+
+    .s-step__circle {
+      top: 16px;
+      left: -17px;
+    }
+
+    .s-step__line {
+      position: absolute;
+      top: 0;
+      left: -15px;
+      width: 1px;
+      height: 100%;
+      background-color: $gray-light;
+    }
+  }
+}
