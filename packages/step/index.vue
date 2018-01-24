@@ -15,7 +15,7 @@ import { create } from "../utils";
 export default create({
     name: "s-step",
     beforeCreate() {
-        this.$parent.push(this);
+        this.$parent.steps.push(this);
     },
     computed: {
         status() {

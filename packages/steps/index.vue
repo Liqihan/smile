@@ -10,11 +10,7 @@ import { create } from "../utils";
 export default create({
     name: "s-steps",
     props: {
-        icon: String,
-        title: String,
         active: Number,
-        iconClass: String,
-        description: String,
         direction: {
             type: String,
             default: "horizontal"
