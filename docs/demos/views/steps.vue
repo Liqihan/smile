@@ -9,6 +9,26 @@
             </s-steps>
             <s-button @click="nextStep">下一步</s-button>
         </demo-block>
+        <demo-block title="垂直方向">
+            <s-steps direction="vertical" :active="active" active-color="#f60">
+                <s-step>
+                    <h3>11111</h3>
+                    <p>2016-07-12 12:40</p>
+                </s-step>
+                <s-step>
+                    <h3>22222</h3>
+                    <p>2016-07-11 10:00</p>
+                </s-step>
+                <s-step>
+                    <h3>33333</h3>
+                    <p>2016-07-10 09:30</p>
+                </s-step>
+                <s-step>
+                    <h3>44444</h3>
+                    <p>2016-07-10 09:30</p>
+                </s-step>
+            </s-steps>
+        </demo-block>
     </section>
 </template>
 <script>
