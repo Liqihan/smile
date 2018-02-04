@@ -8,6 +8,7 @@ import Icon from './icon';
 import Toast from './toast';
 import Steps from './steps';
 import Step from './step';
+import Popup from './popup';
 const components = [
     Button,
     Row,
@@ -17,7 +18,8 @@ const components = [
     Tab,
     Icon,
     Step,
-    Steps
+    Steps,
+    Popup
 ];
 const install = Vue => {
     components.forEach(component => {
@@ -40,6 +42,7 @@ export {
     Toast,
     Steps,
     Step,
+    Popup
     install,
     version
 }
