@@ -3,12 +3,12 @@
         <div v-show="value" class="s-popup" :class="{ [`s-popup--${position}`]: position }">
             <slot />
         </div>
-    </transition>ÎÎ
+    </transition>
 </template>
 <script>
 import { create } from "../utils";
 import Popup from "../mixins/popup";
-export default {
+export default create({
     name: "s-popup",
     mixins: [Popup],
     props: {
@@ -44,7 +44,7 @@ export default {
             this.open();
         }
     }
-};
+});
 </script>
 <style lang="css">
 </style>

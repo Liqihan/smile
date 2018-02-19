@@ -22,5 +22,6 @@ export default {
     'tab': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/tab'), 'tab')), 'tab')),
     'icon': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/icon'), 'icon')), 'icon')),
     'toast': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/toast'), 'toast')), 'toast')),
-    'steps': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/steps'), 'steps')), 'steps'))
+    'steps': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/steps'), 'steps')), 'steps')),
+    'popup': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/popup'), 'popup')), 'popup'))
 }

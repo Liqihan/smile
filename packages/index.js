@@ -42,7 +42,7 @@ export {
     Toast,
     Steps,
     Step,
-    Popup
+    Popup,
     install,
     version
 }
